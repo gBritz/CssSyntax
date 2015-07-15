@@ -21,20 +21,6 @@ namespace CssWalker
             commentary = new CssCommentaryInterpreter(VisitBeginComment, VisitEndComment);
         }
 
-        public virtual void VisitBeginSelector(String selector, Int32 line, Int32 column) { }
-
-        public virtual void VisitEndSelector(String selector, Int32 line, Int32 column) { }
-
-        public virtual void VisitProperty(String name, String value) { }
-
-        public virtual void VisitBeginMedia(String media, Int32 line, Int32 column) { }
-
-        public virtual void VisitEndMedia(String media, Int32 line, Int32 column) { }
-
-        public virtual void VisitBeginComment(Int32 line, Int32 column) { }
-
-        public virtual void VisitEndComment(String comment, Int32 line, Int32 column) { }
-
         public void Visit(TextReader reader)
         {
             reader.ThrowIfNull("reader");
@@ -47,6 +33,20 @@ namespace CssWalker
                 ReadBuffer(buffer, readedLength);
             }
         }
+
+        protected virtual void VisitBeginSelector(String selector, Int32 line, Int32 column) { }
+
+        protected virtual void VisitEndSelector(String selector, Int32 line, Int32 column) { }
+
+        protected virtual void VisitProperty(String name, String value) { }
+
+        protected virtual void VisitBeginMedia(String media, Int32 line, Int32 column) { }
+
+        protected virtual void VisitEndMedia(String media, Int32 line, Int32 column) { }
+
+        protected virtual void VisitBeginComment(Int32 line, Int32 column) { }
+
+        protected virtual void VisitEndComment(String comment, Int32 line, Int32 column) { }
 
         private void ReadBuffer(Char[] buffer, Int32 length)
         {
