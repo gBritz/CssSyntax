@@ -5,6 +5,9 @@ namespace CssWalker
 {
     public class CssCommentaryInterpreter
     {
+        private static readonly Char CommentPart1 = '/';
+        private static readonly Char CommentPart2 = '*';
+
         private readonly StringBuilder content = new StringBuilder();
         private readonly Action<Int32, Int32> onOpen;
         private readonly Action<String, Int32, Int32> onClose;
@@ -30,7 +33,7 @@ namespace CssWalker
             IsOpen = false;
             IsClose = false;
 
-            if (buffer[index] == '/' && buffer[index + 1] == '*')
+            if (buffer[index] == CommentPart1 && buffer[index + 1] == CommentPart2)
             {
                 IsOpen = true;
                 IsCommentary = true;
@@ -38,7 +41,7 @@ namespace CssWalker
 
                 onOpen(currentLine, currentColumn);
             }
-            else if (buffer[index] == '*' && buffer[index + 1] == '/')
+            else if (buffer[index] == CommentPart2 && buffer[index + 1] == CommentPart1)
             {
                 IsClose = true;
                 IsCommentary = false;
