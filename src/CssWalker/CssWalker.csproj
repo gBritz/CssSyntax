@@ -39,9 +39,15 @@
     <Compile Include="CssContext.cs" />
     <Compile Include="CssMediaContext.cs" />
     <Compile Include="CssSelectorContext.cs" />
+    <Compile Include="SyntaxTree\CssTreeWalker.cs" />
     <Compile Include="CssWalker.cs" />
     <Compile Include="ExceptionExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyntaxTree\CommentarySyntax.cs" />
+    <Compile Include="SyntaxTree\MediaSyntax.cs" />
+    <Compile Include="SyntaxTree\Position.cs" />
+    <Compile Include="SyntaxTree\PropertySyntax.cs" />
+    <Compile Include="SyntaxTree\SelectorSyntax.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

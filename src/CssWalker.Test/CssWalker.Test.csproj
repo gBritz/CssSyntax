@@ -58,7 +58,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AdapterCssWalker.cs" />
+    <Compile Include="CssTreeExtensions.cs" />
     <Compile Include="CssWalkerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
