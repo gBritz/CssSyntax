@@ -39,7 +39,7 @@ namespace CssWalker
                 IsCommentary = true;
                 index = result = index + 2;
 
-                onOpen(currentLine, currentColumn);
+                onOpen(currentLine, currentColumn - 1);
             }
             else if (buffer[index] == CommentPart2 && buffer[index + 1] == CommentPart1)
             {
@@ -47,7 +47,7 @@ namespace CssWalker
                 IsCommentary = false;
                 result = index + 2;
 
-                onClose(content.ToString(), currentLine, currentColumn);
+                onClose(content.ToString(), currentLine, currentColumn + 1);
                 content.Clear();
             }
 

@@ -60,5 +60,27 @@ namespace CssWalker.Test
             comments[0].StartAt.Should().Be(new Position(2, 17));
             comments[0].EndAt.Should().Be(new Position(2, 40));
         }
+
+        [TestMethod]
+        public void CommentaryShouldHavePositionOneLineAndColumn20()
+        {
+            var comments = @"/* Testing 123... */".ToComments();
+
+            comments.Should().HaveCount(1);
+            comments[0].StartAt.Should().Be(new Position(1, 1));
+            comments[0].EndAt.Should().Be(new Position(1, 21));
+        }
+
+        [TestMethod]
+        public void CommentaryShouldHavePositionMultiLineAndColumn20()
+        {
+            var comments = @"/* Testing 123... 
+
+*/".ToComments();
+
+            comments.Should().HaveCount(1);
+            comments[0].StartAt.Should().Be(new Position(1, 1));
+            comments[0].EndAt.Should().Be(new Position(3, 3));
+        }
     }
 }

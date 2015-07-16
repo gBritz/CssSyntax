@@ -11,8 +11,8 @@ namespace CssWalker
         private const Char BreakLine = '\n';
         private readonly StringBuilder sb = new StringBuilder();
 
-        private Int32 currentLine;
-        private Int32 currentColumn;
+        private Int32 currentLine = 1;
+        private Int32 currentColumn = 1;
         private CssContext context;
         private readonly CssCommentaryInterpreter commentary;
 
@@ -57,11 +57,18 @@ namespace CssWalker
                 if (buffer[i] == BreakLine)
                 {
                     currentLine++;
-                    currentColumn = 0;
+                    currentColumn = 1;
                     continue;
                 }
 
-                i = commentary.Interpret(buffer, i, length, currentLine, currentColumn);
+                var newIndex = commentary.Interpret(buffer, i, length, currentLine, currentColumn);
+
+                if (newIndex > i)
+                {
+                    currentColumn += newIndex - i;
+                    i = newIndex;
+                }
+
                 if (commentary.IsCommentary || commentary.IsOpen || commentary.IsClose)
                 {
                     if (commentary.IsClose)
