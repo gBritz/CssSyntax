@@ -6,14 +6,14 @@ namespace CssWalker.SyntaxTree
 {
     public class CssTreeWalker : CssWalker
     {
-        private readonly IList<MediaSyntax> medias = new List<MediaSyntax>();
+        private readonly IList<AtRuleSyntax> medias = new List<AtRuleSyntax>();
         private readonly IList<SelectorSyntax> selectors = new List<SelectorSyntax>();
         private readonly IList<CommentarySyntax> comments = new List<CommentarySyntax>();
 
         private Boolean isOpenedMedia;
         private Boolean isOpenedSelector;
 
-        public MediaSyntax[] Medias
+        public AtRuleSyntax[] Medias
         {
             get { return medias.ToArray(); }
         }
@@ -30,7 +30,7 @@ namespace CssWalker.SyntaxTree
 
         protected override void VisitBeginMedia(string selector, int line, int column)
         {
-            medias.Add(new MediaSyntax
+            medias.Add(new AtRuleSyntax
             {
                 Content = selector,
                 StartAt = new Position(line, column)

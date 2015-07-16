@@ -8,7 +8,7 @@ namespace CssWalker.Test
     public class CssWalkerTest
     {
         [TestMethod]
-        public void GivenOneEmptyCssClassButton_ClassNameShouldBeButton()
+        public void SelectShouldHaveOneElement()
         {
             var selectors = @" .btn {}".ToSelectors();
 
@@ -17,7 +17,7 @@ namespace CssWalker.Test
         }
 
         [TestMethod]
-        public void GivenOneCssClassButtonWithTwoProperties_ClassNameShouldBeButton()
+        public void ClassNameShouldBeTwoProperties()
         {
             var selectors = @"
                 .button {
@@ -27,26 +27,38 @@ namespace CssWalker.Test
             ".ToSelectors();
 
             selectors.Should().HaveCount(1);
-            selectors[0].Content.Should().Be(".button ");
+
+            var selector = selectors[0];
+            selector.StartAt.Should().Be(new Position(2, 26));
+            selector.EndAt.Should().Be(new Position(5, 18));
+
+            selector.Properties.Should().HaveCount(2);
+            selector.Properties[0].Content.Should().Be("margin-top:10px");
+            selector.Properties[1].Content.Should().Be("background-image:url(../img/bk.jpg)");
         }
 
         [TestMethod]
-        public void ClassNameButtonShouldBeLineOneAndColumn10()
+        public void ClassNameShouldBeTwoSelectors()
         {
             var selectors = @"
-                .button {
+                #edit-task { padding-top : 10px; }
+                .btn {
                     margin-top: 10px;
                     background-image: url(../img/bk.jpg);
                 }
             ".ToSelectors();
 
-            selectors.Should().HaveCount(1);
-            selectors[0].StartAt.Should().Be(new Position(2, 26));
-            selectors[0].EndAt.Should().Be(new Position(5, 18));
+            selectors.Should().HaveCount(2);
+            selectors[0].Content.Should().Be("#edit-task ");
+            selectors[0].Properties.Should().HaveCount(1);
+            selectors[0].Properties[0].Content.Should().Be("padding-top:10px");
+
+            selectors[1].Content.Should().Be(".btn ");
+            selectors[1].Properties.Should().HaveCount(2);
         }
 
         [TestMethod]
-        public void GivenCommentaryOfOneLineBeforeClass_CommentsShouldBeOne()
+        public void CommentaryShouldHaveOneAndAtPosition()
         {
             var comments = @"
                 /* Is a class of god */

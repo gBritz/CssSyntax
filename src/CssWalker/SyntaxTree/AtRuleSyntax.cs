@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace CssWalker.SyntaxTree
 {
-    public class MediaSyntax : ISyntax
+    public class AtRuleSyntax : ISyntax
     {
-        public MediaSyntax()
+        public AtRuleSyntax()
         {
             Selectors = new List<SelectorSyntax>();
             Comments = new List<CommentarySyntax>();

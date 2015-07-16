@@ -21,7 +21,7 @@ namespace CssWalker.Test
             return css.InterpretSyntax().Selectors;
         }
 
-        public static MediaSyntax[] ToMedias(this String css)
+        public static AtRuleSyntax[] ToAtRules(this String css)
         {
             return css.InterpretSyntax().Medias;
         }
