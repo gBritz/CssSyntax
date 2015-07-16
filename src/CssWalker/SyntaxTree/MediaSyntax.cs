@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CssWalker.SyntaxTree
 {
-    public class MediaSyntax : ISyntax
+    public class MediaSyntax
     {
         public MediaSyntax()
         {
@@ -11,7 +11,7 @@ namespace CssWalker.SyntaxTree
             Comments = new List<CommentarySyntax>();
         }
 
-        public String Content { get; set; }
+        public String Selector { get; set; }
 
         public Position StartAt { get; set; }
 

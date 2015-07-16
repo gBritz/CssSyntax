@@ -48,7 +48,6 @@
     <Compile Include="SyntaxTree\Position.cs" />
     <Compile Include="SyntaxTree\PropertySyntax.cs" />
     <Compile Include="SyntaxTree\SelectorSyntax.cs" />
-    <Compile Include="SyntaxTree\ISyntax.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

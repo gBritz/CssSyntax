@@ -13,7 +13,7 @@ namespace CssWalker.Test
             var selectors = @" .btn {}".ToSelectors();
 
             selectors.Should().HaveCount(1);
-            selectors[0].Content.Should().Be(".btn ");
+            selectors[0].Selector.Should().Be(".btn ");
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace CssWalker.Test
             ".ToSelectors();
 
             selectors.Should().HaveCount(1);
-            selectors[0].Content.Should().Be(".button ");
+            selectors[0].Selector.Should().Be(".button ");
         }
 
         [TestMethod]

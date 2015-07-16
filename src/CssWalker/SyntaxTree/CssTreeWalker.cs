@@ -32,7 +32,7 @@ namespace CssWalker.SyntaxTree
         {
             medias.Add(new MediaSyntax
             {
-                Content = selector,
+                Selector = selector,
                 StartAt = new Position(line, column)
             });
 
@@ -70,7 +70,7 @@ namespace CssWalker.SyntaxTree
 
             selectorsList.Add(new SelectorSyntax
             {
-                Content = selector,
+                Selector = selector,
                 StartAt = new Position(line, column)
             });
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CssWalker.SyntaxTree
 {
-    public class SelectorSyntax : ISyntax
+    public class SelectorSyntax
     {
         public SelectorSyntax()
         {
@@ -11,7 +11,7 @@ namespace CssWalker.SyntaxTree
             Comments = new List<CommentarySyntax>();
         }
 
-        public String Content { get; set; }
+        public String Selector { get; set; }
 
         public Position StartAt { get; set; }
 

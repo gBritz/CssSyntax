@@ -2,7 +2,7 @@
 
 namespace CssWalker.SyntaxTree
 {
-    public class CommentarySyntax : ISyntax
+    public class CommentarySyntax
     {
         public String Content { get; set; }
 
