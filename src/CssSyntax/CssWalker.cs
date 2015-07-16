@@ -41,9 +41,9 @@ namespace CssSyntax
 
         protected virtual void VisitProperty(String name, String value) { }
 
-        protected virtual void VisitBeginMedia(String media, Int32 line, Int32 column) { }
+        protected virtual void VisitBeginAtRule(String selector, Int32 line, Int32 column) { }
 
-        protected virtual void VisitEndMedia(String media, Int32 line, Int32 column) { }
+        protected virtual void VisitEndAtRule(String selector, Int32 line, Int32 column) { }
 
         protected virtual void VisitBeginComment(Int32 line, Int32 column) { }
 
@@ -119,12 +119,12 @@ namespace CssSyntax
 
             selector = selector.TrimStart();
 
-            if (selector.StartsWith("@")) //@media
+            if (selector.StartsWith("@"))
             {
                 ctx = new CssMediaContext(selector)
                 {
-                    OnOpen = VisitBeginMedia,
-                    OnClose = VisitEndMedia
+                    OnOpen = VisitBeginAtRule,
+                    OnClose = VisitEndAtRule
                 };
             }
             else

@@ -28,7 +28,7 @@ namespace CssSyntax.SyntaxTree
             get { return comments.ToArray(); }
         }
 
-        protected override void VisitBeginMedia(string selector, int line, int column)
+        protected override void VisitBeginAtRule(string selector, int line, int column)
         {
             medias.Add(new AtRuleSyntax
             {
@@ -39,7 +39,7 @@ namespace CssSyntax.SyntaxTree
             isOpenedMedia = true;
         }
 
-        protected override void VisitEndMedia(string selector, int line, int column)
+        protected override void VisitEndAtRule(string selector, int line, int column)
         {
             var media = medias.Last();
             media.EndAt = new Position(line, column);
