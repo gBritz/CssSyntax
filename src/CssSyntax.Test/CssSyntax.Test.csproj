@@ -63,7 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CssWalker\CssSyntax.csproj">
+    <ProjectReference Include="..\CssSyntax\CssSyntax.csproj">
       <Project>{3154c13f-2bdc-49df-b052-883bf7cb62d0}</Project>
       <Name>CssSyntax</Name>
     </ProjectReference>
