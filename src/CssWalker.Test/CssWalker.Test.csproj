@@ -58,7 +58,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CssTreeExtensions.cs" />
+    <Compile Include="CssTreeSyntaxExtensions.cs" />
     <Compile Include="CssWalkerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

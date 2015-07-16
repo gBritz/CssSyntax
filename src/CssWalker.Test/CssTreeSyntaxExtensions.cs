@@ -4,7 +4,7 @@ using System.IO;
 
 namespace CssWalker.Test
 {
-    public static class CssTreeExtensions
+    public static class CssTreeSyntaxExtensions
     {
         public static CssTreeWalker InterpretSyntax(this String css)
         {
