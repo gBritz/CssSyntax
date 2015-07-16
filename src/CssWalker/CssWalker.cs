@@ -9,12 +9,13 @@ namespace CssWalker
         private const Char OpenScope = '{';
         private const Char CloseScope = '}';
         private const Char BreakLine = '\n';
+
         private readonly StringBuilder sb = new StringBuilder();
+        private readonly CssCommentaryInterpreter commentary;
 
         private Int32 currentLine = 1;
         private Int32 currentColumn = 1;
         private CssContext context;
-        private readonly CssCommentaryInterpreter commentary;
 
         public CssWalker()
         {
