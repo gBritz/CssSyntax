@@ -7,8 +7,8 @@
     <ProjectGuid>{3154C13F-2BDC-49DF-B052-883BF7CB62D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CssWalker</RootNamespace>
-    <AssemblyName>CssWalker</AssemblyName>
+    <RootNamespace>CssSyntax</RootNamespace>
+    <AssemblyName>CssSyntax</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

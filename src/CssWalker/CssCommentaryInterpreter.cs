@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace CssWalker
+namespace CssSyntax
 {
     public class CssCommentaryInterpreter
     {

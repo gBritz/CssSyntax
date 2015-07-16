@@ -1,8 +1,8 @@
-﻿using CssWalker.SyntaxTree;
+﻿using CssSyntax.SyntaxTree;
 using System;
 using System.IO;
 
-namespace CssWalker.Test
+namespace CssSyntax.Test
 {
     public static class CssTreeSyntaxExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CssWalker
+namespace CssSyntax
 {
     public abstract class CssContext
     {

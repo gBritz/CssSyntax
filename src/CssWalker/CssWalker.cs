@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace CssWalker
+namespace CssSyntax
 {
     public abstract class CssWalker
     {

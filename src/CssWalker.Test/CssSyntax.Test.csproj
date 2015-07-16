@@ -6,8 +6,8 @@
     <ProjectGuid>{0CDB809F-47CD-4204-A7B4-709BB21672CF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CssWalker.Test</RootNamespace>
-    <AssemblyName>CssWalker.Test</AssemblyName>
+    <RootNamespace>CssSyntax.Test</RootNamespace>
+    <AssemblyName>CssSyntax.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,9 +63,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CssWalker\CssWalker.csproj">
+    <ProjectReference Include="..\CssWalker\CssSyntax.csproj">
       <Project>{3154c13f-2bdc-49df-b052-883bf7cb62d0}</Project>
-      <Name>CssWalker</Name>
+      <Name>CssSyntax</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

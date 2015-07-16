@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace CssWalker.SyntaxTree
+namespace CssSyntax.SyntaxTree
 {
     [DebuggerDisplay("line={line}, colum={column}")]
     public struct Position

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CssWalker.SyntaxTree
+namespace CssSyntax.SyntaxTree
 {
     public class CssTreeWalker : CssWalker
     {

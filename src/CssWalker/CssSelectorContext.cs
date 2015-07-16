@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CssWalker
+namespace CssSyntax
 {
     public class CssSelectorContext : CssContext
     {

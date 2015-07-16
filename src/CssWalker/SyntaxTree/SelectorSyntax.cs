@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CssWalker.SyntaxTree
+namespace CssSyntax.SyntaxTree
 {
     public class SelectorSyntax : ISyntax
     {

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssWalker", "CssWalker\CssWalker.csproj", "{3154C13F-2BDC-49DF-B052-883BF7CB62D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssSyntax", "CssWalker\CssSyntax.csproj", "{3154C13F-2BDC-49DF-B052-883BF7CB62D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssWalker.Test", "CssWalker.Test\CssWalker.Test.csproj", "{0CDB809F-47CD-4204-A7B4-709BB21672CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssSyntax.Test", "CssWalker.Test\CssSyntax.Test.csproj", "{0CDB809F-47CD-4204-A7B4-709BB21672CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

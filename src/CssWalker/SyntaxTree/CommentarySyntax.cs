@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CssWalker.SyntaxTree
+namespace CssSyntax.SyntaxTree
 {
     public class CommentarySyntax : ISyntax
     {

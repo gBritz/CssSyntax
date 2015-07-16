@@ -1,8 +1,8 @@
-﻿using CssWalker.SyntaxTree;
+﻿using CssSyntax.SyntaxTree;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CssWalker.Test
+namespace CssSyntax.Test
 {
     [TestClass]
     public class CssWalkerTest
