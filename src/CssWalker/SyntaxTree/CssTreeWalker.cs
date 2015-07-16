@@ -73,6 +73,8 @@ namespace CssWalker.SyntaxTree
                 Content = selector,
                 StartAt = new Position(line, column)
             });
+
+            isOpenedSelector = true;
         }
 
         protected override void VisitEndSelector(string content, int line, int column)
@@ -81,6 +83,7 @@ namespace CssWalker.SyntaxTree
             var selector = selectorsList.Last();
 
             selector.EndAt = new Position(line, column);
+            isOpenedSelector = false;
         }
 
         protected override void VisitProperty(string name, string value)
