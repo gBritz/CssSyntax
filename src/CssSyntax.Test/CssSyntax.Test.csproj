@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CssTreeSyntaxExtensions.cs" />
+    <Compile Include="CssWalkerMock.cs" />
     <Compile Include="CssWalkerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

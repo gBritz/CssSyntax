@@ -1,6 +1,9 @@
 ﻿using CssSyntax.SyntaxTree;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
+using System.Text;
 
 namespace CssSyntax.Test
 {
@@ -141,6 +144,59 @@ namespace CssSyntax.Test
             commnets[5].Content.Should().Be(" IE10+ ");
             commnets[6].Content.Should().Be(" W3C ");
             commnets[7].Content.Should().Be(" IE6-9 ");
+        }
+
+        [TestMethod]
+        public void TextShouldBeEqualsCss()
+        {
+            var css =
+@"img {
+  float: right;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}";
+
+            var cssText = new StringBuilder();
+            var walker = new CssWalkerMock
+            {
+                OnVisitText = text => cssText.Append(text)
+            };
+
+            walker.Visit(new StringReader(css));
+
+            cssText.ToString().Should()
+                .NotBeNullOrEmpty().And
+                .Be(css);
+        }
+
+        [TestMethod]
+        public void TextWithCommentsShouldBeEqualsCss()
+        {
+            var css =
+@"img {
+  float: right;
+}
+
+/*Css clear fix*/
+.clearfix {
+  overflow: auto;
+  zoom: 1; /*IE6 support*/
+}";
+
+            var cssText = new StringBuilder();
+            var walker = new CssWalkerMock
+            {
+                OnVisitText = text => cssText.Append(text)
+            };
+
+            walker.Visit(new StringReader(css));
+
+            cssText.ToString().Should()
+                .NotBeNullOrEmpty().And
+                .Be(css);
         }
     }
 }
