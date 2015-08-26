@@ -11,6 +11,7 @@ namespace CssSyntax.Test
         public Action<String, Int32, Int32> OnVisitEndComment { get; set; }
         public Action<String, Int32, Int32> OnVisitEndSelector { get; set; }
         public Action<String, String> OnVisitProperty { get; set; }
+        public Action<Int32, Int32> OnVisitBreakLine { get; set; }
         public Action<String> OnVisitText { get; set; }
 
         protected override void VisitBeginAtRule(string selector, int line, int column)
@@ -53,6 +54,12 @@ namespace CssSyntax.Test
         {
             if (OnVisitProperty != null)
                 OnVisitProperty(name, value);
+        }
+
+        protected override void VisitBreakLine(int line, int column)
+        {
+            if (OnVisitBreakLine != null)
+                OnVisitBreakLine(line, column);
         }
 
         protected override void VisitText(string text)

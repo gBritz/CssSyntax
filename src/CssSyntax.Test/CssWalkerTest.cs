@@ -1,7 +1,6 @@
 ﻿using CssSyntax.SyntaxTree;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.IO;
 using System.Text;
 
@@ -183,7 +182,7 @@ namespace CssSyntax.Test
 /*Css clear fix*/
 .clearfix {
   overflow: auto;
-  zoom: 1; /*IE6 support*/
+  zoom: 1;/*IE6 support*/
 }";
 
             var cssText = new StringBuilder();
@@ -197,6 +196,58 @@ namespace CssSyntax.Test
             cssText.ToString().Should()
                 .NotBeNullOrEmpty().And
                 .Be(css);
+        }
+
+        [TestMethod]
+        public void SelectShouldNotBeBreakLines()
+        {
+            var css = @" .btn {}";
+
+            var countBreakLine = 0;
+            var walker = new CssWalkerMock
+            {
+                OnVisitBreakLine = (line, colum) => countBreakLine++
+            };
+
+            walker.Visit(new StringReader(css));
+
+            countBreakLine.Should().Be(0);
+        }
+
+        [TestMethod]
+        public void SelectShouldBeContainsTwoBreakLines()
+        {
+            var css = @"img {
+  float: right;
+}";
+
+            var countBreakLine = 0;
+            var walker = new CssWalkerMock
+            {
+                OnVisitBreakLine = (line, colum) => countBreakLine++
+            };
+
+            walker.Visit(new StringReader(css));
+
+            countBreakLine.Should().Be(2);
+        }
+
+        [TestMethod]
+        public void SelectShouldBeContainsTwoConsecutivesBreakLines()
+        {
+            var css = @"
+
+img { float: right; }";
+
+            var countBreakLine = 0;
+            var walker = new CssWalkerMock
+            {
+                OnVisitBreakLine = (line, colum) => countBreakLine++
+            };
+
+            walker.Visit(new StringReader(css));
+
+            countBreakLine.Should().Be(2);
         }
     }
 }
